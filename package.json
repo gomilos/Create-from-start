@@ -1,0 +1,22 @@
+{
+  "name": "create_from_start",
+  "version": "1.0.0",
+  "description": "Create React project from start",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gomilos/CreateReactFromStart.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Goran Milosavljevic",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gomilos/CreateReactFromStart/issues"
+  },
+  "homepage": "https://github.com/gomilos/CreateReactFromStart#readme"
+}
