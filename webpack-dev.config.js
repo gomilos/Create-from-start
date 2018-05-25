@@ -29,12 +29,20 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     publicPath: bundlePath,
-    filename: "bundle.js"
+    filename: "index.js"
   },
   devServer: {
-    contentBase: path.join(__dirname, "public"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist"
+    host: 'localhost',
+    port: '3000',
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    historyApiFallback: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  entry: ['react-hot-loader/patch', path.join(__dirname, '/src/index.jsx')], 
+  plugins:  [
+    HTMLWebpackPluginConfig,
+    new webpack.HotModuleReplacementPlugin(),
+  ] 
 };
