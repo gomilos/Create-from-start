@@ -4,6 +4,8 @@
   "description": "Create React project from start",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config ./webpack-dev.config.js",
+    "build": "webpack --config ./webpack-prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/gomilos/CreateReactFromStart/issues"
   },
-  "homepage": "https://github.com/gomilos/CreateReactFromStart#readme"
+  "homepage": "https://github.com/gomilos/CreateReactFromStart#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "webpack": "^4.4.1"
+  }
 }
