@@ -29,7 +29,7 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     publicPath: bundlePath,
-    filename: "index.js"
+    filename: "bundle.js"
   },
 
   plugins: []

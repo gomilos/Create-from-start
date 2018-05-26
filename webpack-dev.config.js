@@ -10,7 +10,8 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: { presets: ["env"], plugins: ["transform-class-properties"] }
       },
       {
         test: /\.css$/,
@@ -28,20 +29,12 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     publicPath: bundlePath,
-    filename: "index.js"
+    filename: "bundle.js"
   },
   devServer: {
-    host: 'localhost',
-    port: '3000',
-    hot: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    historyApiFallback: true,
+    contentBase: path.join(__dirname, "public"),
+    port: 3001,
+    publicPath: "http://localhost:3001/dist"
   },
-  entry: ['react-hot-loader/patch', path.join(__dirname, '/src/index.jsx')], 
-  plugins:  [
-    HTMLWebpackPluginConfig,
-    new webpack.HotModuleReplacementPlugin(),
-  ] 
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
