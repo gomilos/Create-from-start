@@ -17,6 +17,10 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!sass-loader',
+      },
+      {
         test: /\.(png|jpg|jpeg|gif|svg|pdf)/,
         exclude: /(node_modules|bower_components)/,
         loader: "file-loader",
